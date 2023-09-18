@@ -171,8 +171,6 @@ class BuildTree extends core_data.BuildTree {
     final customWidget = customWidgetBuilder?.call(this, element);
     if (customWidget != null) {
       add(customWidget);
-      // skip further processing if a custom widget found
-      return;
     }
 
     final meta = BuildMetadata(element, parentMeta.tsb.sub(), parentOps);
