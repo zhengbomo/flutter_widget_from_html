@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:html/dom.dart' as dom;
 
+import '../flutter_widget_from_html_core.dart';
 import 'core_html_widget.dart';
 import 'core_widget_factory.dart';
 
@@ -48,7 +49,7 @@ typedef CustomStylesBuilder = Map<String, String>? Function(
 /// you have to handle the DOM element and its children manually,
 /// if the children have HTML styling etc., they won't be processed at all.
 /// For those needs, a custom [WidgetFactory] is the way to go.
-typedef CustomWidgetBuilder = Widget? Function(dom.Element element);
+typedef CustomWidgetBuilder = WidgetBit? Function(BuildTree tree, dom.Element element);
 
 /// A callback to scroll the anchor identified by [id] into the viewport.
 ///

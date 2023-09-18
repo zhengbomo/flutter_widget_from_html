@@ -37,7 +37,7 @@ class CustomWidgetBuilderScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: HtmlWidget(
               kHtml,
-              customWidgetBuilder: (e) {
+              customWidgetBuilder: (tree, e) {
                 if (!e.classes.contains('carousel')) {
                   return null;
                 }
@@ -51,15 +51,18 @@ class CustomWidgetBuilderScreen extends StatelessWidget {
                   }
                 }
 
-                return CarouselSlider(
-                  options: CarouselOptions(
-                    autoPlay: true,
-                    autoPlayAnimationDuration:
+                return WidgetBit.block(
+                    tree,
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        autoPlay: true,
+                        autoPlayAnimationDuration:
                         const Duration(milliseconds: 500),
-                    autoPlayInterval: const Duration(seconds: 2),
-                    enlargeCenterPage: true,
-                  ),
-                  items: srcs.map(_toItem).toList(growable: false),
+                        autoPlayInterval: const Duration(seconds: 2),
+                        enlargeCenterPage: true,
+                      ),
+                      items: srcs.map(_toItem).toList(growable: false),
+                    )
                 );
               },
             ),

@@ -255,7 +255,7 @@ void main() {
   });
 
   group('customWidgetBuilder', () {
-    Widget? customWidgetBuilder(dom.Element _) => const Text('Bar');
+    WidgetBit? customWidgetBuilder(BuildTree buildTree, dom.Element _) => WidgetBit.block(buildTree, const Text('Bar'));
     const html = 'Foo <span>bar</span>';
 
     testWidgets('renders without value', (WidgetTester tester) async {
@@ -277,8 +277,8 @@ void main() {
   });
 
   group('customWidgetBuilder (TABLE)', () {
-    Widget? customWidgetBuilder(dom.Element e) =>
-        e.localName == 'table' ? const Text('Bar') : null;
+    WidgetBit? customWidgetBuilder(BuildTree buildTree, dom.Element e) =>
+        e.localName == 'table' ? WidgetBit.block(buildTree, const Text('Bar')) : null;
     const html = 'Foo <table><tr><td>bar</td></tr></table>';
 
     testWidgets('renders without value', (WidgetTester tester) async {

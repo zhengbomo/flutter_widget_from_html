@@ -168,9 +168,9 @@ class BuildTree extends core_data.BuildTree {
     }
 
     final element = domNode as dom.Element;
-    final customWidget = customWidgetBuilder?.call(element);
+    final customWidget = customWidgetBuilder?.call(this, element);
     if (customWidget != null) {
-      add(WidgetBit.block(this, customWidget));
+      add(customWidget);
       // skip further processing if a custom widget found
       return;
     }
