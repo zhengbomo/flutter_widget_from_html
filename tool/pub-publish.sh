@@ -43,7 +43,6 @@ function publish {
 
 (cd packages/core && publish)
 (cd packages/fwfh_cached_network_image && publish)
-(cd packages/fwfh_chewie && publish)
 (cd packages/fwfh_just_audio && publish)
 (cd packages/fwfh_svg && publish)
 (cd packages/fwfh_url_launcher && publish)

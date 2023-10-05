@@ -10,7 +10,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 
-import '../../packages/fwfh_chewie/test/mock_video_player_platform.dart';
 import '../../packages/fwfh_webview/test/mock_webview_platform.dart';
 
 final goldenSkipEnvVar = Platform.environment['GOLDEN_SKIP'];
@@ -53,7 +52,6 @@ void _test(
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  mockVideoPlayerPlatform();
   mockWebViewPlatform();
 
   const audioSessionMc = MethodChannel('com.ryanheise.audio_session');

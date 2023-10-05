@@ -25,13 +25,6 @@ if [ -z "$UPDATE_GOLDENS" ]; then
   )
 
   (
-    cd ./packages/fwfh_chewie &&
-      flutter analyze &&
-      flutter test "$@" &&
-      echo 'packages/fwfh_chewie OK'
-  )
-
-  (
     cd ./packages/fwfh_just_audio &&
       flutter analyze &&
       flutter test "$@" &&

@@ -12,7 +12,6 @@ dependencies:
     sdk: flutter
   flutter_widget_from_html: any
   flutter_widget_from_html_core: any
-  fwfh_chewie: any
   fwfh_webview: any
   html: any
   http: any
@@ -28,8 +27,6 @@ dependency_overrides:
     path: ../packages/core
   fwfh_cached_network_image:
     path: ../packages/fwfh_cached_network_image
-  fwfh_chewie:
-    path: ../packages/fwfh_chewie
   fwfh_just_audio:
     path: ../packages/fwfh_just_audio
   fwfh_svg:

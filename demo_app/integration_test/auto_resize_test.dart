@@ -2,29 +2,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fwfh_chewie/fwfh_chewie.dart';
 import 'package:fwfh_webview/fwfh_webview.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:measurer/measurer.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
-  testWidgets('VideoPlayer', (WidgetTester tester) async {
-    final test = _AspectRatioTest(
-      child: VideoPlayer(
-        'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-        aspectRatio: 1,
-        loadingBuilder: (_, __, ___) =>
-            const Center(child: CircularProgressIndicator()),
-      ),
-    );
-
-    runApp(test);
-    await tester.pumpAndSettle();
-
-    test.expectValueEquals(16 / 9);
-  });
 
   final webViewTestCases = ValueVariant(const {
     WebViewTestCase(0.5, false),
